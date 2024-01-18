@@ -1,0 +1,9 @@
+src/components/home-preview.vue
+src/components/BlindBoxHomeSvg.vue
+src/components/FillArrow.vue
+src/components/icons/*
+src/components/circle-spinner/*
+dist/*
+node_modules/*
+src/views/proposal/InitiateProposal.vue
+src/views/user-center/edit-profile.vue

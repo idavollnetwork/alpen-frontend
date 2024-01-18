@@ -1,0 +1,124 @@
+@import "./layout.scss";
+@import "./colors.scss";
+@import "./public.scss";
+
+
+// 盲盒普通背景颜色
+$blind-box-bg-normal:linear-gradient(137deg,
+    #F5F5FF 0%,
+    #EBF9FF 7.5%,
+    #99C1E1 16%,
+    #ECF1FC 26%,
+    #B2B3E8 39.5%,
+    #F5F5FF 50% ,
+    #EBF9FF 57.5%,
+    #99C1E1 66%,
+    #ECF1FC 76%,
+    #B2B3E8 89.5%,
+    #F5F5FF 100%);
+// 盲盒中奖颜色
+$blind-box-bg-award: linear-gradient(135deg,
+        #F8F3B6 0%,
+        #FFFBED 5.5%,
+        #FFF1D0 15.5%,
+        #FEFFF0 26%,
+        #FFEFAA 36%,
+        #FFF9DA 44%,
+        #F8F3B6 50%,
+        #FFFBED 55.5%,
+        #FFF1D0 65.5%,
+        #FEFFF0 76%,
+        #FFEFAA 86%,
+        #FFF9DA 94%,
+        #F8F3B6 100%);
+//// 盲盒结束未中奖背景
+//$blind-box-bg-finish:
+.blind-box-card-normal {
+  border: solid 0.27vw #ffffff99;
+  background-size: 200% 200%;
+  animation: bgAnimation 4s infinite linear;
+  background-image: $blind-box-bg-normal;
+}
+@keyframes bgAnimation {
+  0% {
+    background-position: right bottom;
+  }
+  100% {
+    background-position: left top;
+  }
+}
+
+.blind-box-card-award {
+  border: solid 0.27vw #ffffff99;
+  background-size: 200% 200%;
+  animation: bgAnimation 4s infinite linear;
+  background-image: $blind-box-bg-award;
+}
+
+.blind-box-card-no-award {
+  background: #FFFFFF4D !important;
+  border: solid 0.27vw #eeeeee;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+// 渐变边框
+@mixin gradient-border($radius, $border-width, $left ,$right) {
+  border: none;
+  background-color: #fff;
+  box-sizing: border-box;
+  background-image: -webkit-linear-gradient(#000000, #000000),
+  -webkit-linear-gradient(left, $left, $right);
+  padding: $border-width;
+  border-radius: $radius;
+  background-clip: content-box, padding-box;
+}
+
+@mixin gradient-border-red($radius, $border-width) {
+  @include gradient-border($radius, $border-width, #ff394a, #e27ded);
+}
+
+@mixin gradient-border-blue($radius, $border-width) {
+  @include gradient-border($radius, $border-width, #3772FF, #3772FF);
+}
+
+@mixin gradient-border-normal($radius, $border-width, $color) {
+  @include gradient-border($radius, $border-width, $color, $color);
+}
+@mixin gradient-bg-red {
+  background: linear-gradient(90deg, #F15F6C 0%, #B267B9 100%);
+}
+@mixin gradient-bg-blue {
+  background: linear-gradient(90deg, #0258F7 0%, #0258F7 100%);
+}
+// 省略号文本(固定行数)
+@mixin ellipsisText($lineCount) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lineCount;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+
+// 字体
+@mixin FontM {
+  font-weight: 500;
+}
+
+@mixin FontR {
+  font-weight: 400;
+}
+
+@mixin FontSB {
+  font-weight: 600;
+}
+
+@mixin FontB {
+  font-weight: 700;
+}
+
+.unselectable {
+  user-select: none;
+}

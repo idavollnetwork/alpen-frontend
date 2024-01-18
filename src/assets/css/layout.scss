@@ -1,0 +1,8 @@
+@mixin centered-view {
+  width: 100%;
+  max-width: 1380px;
+  padding: 0 8vw;
+  @include media-breakpoint-up(md) {
+    padding: 0 30px;
+  }
+}

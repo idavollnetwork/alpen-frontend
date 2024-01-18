@@ -1,0 +1,40 @@
+.modal-content {
+    border-radius: 20px !important;
+    border: none !important;
+}
+
+.modal-body {
+    padding: 0 !important;
+    border-radius: 20px !important;
+    overflow: hidden;
+}
+
+ .popover {
+     border: none;
+     box-shadow: 0 0 24px #1F2F4631;
+     .arrow {
+     }
+     .popover-body {
+         border: none;
+     }
+}
+
+.mx-datepicker-popup {
+    box-shadow: 0 0 5px rgb(0 0 0 / 10%) !important;
+}
+
+.white-button {
+    background: white;
+    color: #3772ff;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    &:focus, &:active, &:hover {
+        background: white;
+        color: #3772ff;
+        border: none;
+        outline: none;
+        box-shadow: none;
+        opacity: 0.8;
+    }
+}
